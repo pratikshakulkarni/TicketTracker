@@ -1,11 +1,11 @@
-package com.tracker.controller;
+package com.tracker.app.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tracker.entity.User;
+import com.tracker.app.model.User;
 
 @Controller
 public class TrackerController implements ITrackerController {
@@ -13,7 +13,7 @@ public class TrackerController implements ITrackerController {
 	@RequestMapping("/")
 	public String getLogin(Model theModel) {
 		
-		User user = User.builder().build();
+		User user = new User();
 		theModel.addAttribute("user", user);
 		
 		return "login";
